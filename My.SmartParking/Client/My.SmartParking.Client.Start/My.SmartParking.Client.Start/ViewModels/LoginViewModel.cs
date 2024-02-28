@@ -18,6 +18,7 @@ namespace My.SmartParking.Client.Start.ViewModels
             get { return _userName; }
             set { SetProperty<string>(ref  _userName , value); }
         }
+
         private string _password;
 
         public string Password
