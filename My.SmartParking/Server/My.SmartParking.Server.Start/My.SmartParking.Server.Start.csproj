@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\My.SmartParking.Server.Configuration\My.SmartParking.Server.Configuration.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.EFContext\My.SmartParking.Server.EFContext.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.IConfiguration\My.SmartParking.Server.IConfiguration.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.IEFContext\My.SmartParking.Server.IEFContext.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.IService\My.SmartParking.Server.IService.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.Models\My.SmartParking.Server.Models.csproj" />
+    <ProjectReference Include="..\My.SmartParking.Server.Service\My.SmartParking.Server.Service.csproj" />
+  </ItemGroup>
+
+</Project>
