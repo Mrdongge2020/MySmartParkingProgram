@@ -1,4 +1,8 @@
-﻿using My.SmartParking.Client.Start.Views;
+﻿using My.SmartParking.Client.BLL;
+using My.SmartParking.Client.DAL;
+using My.SmartParking.Client.IBLL;
+using My.SmartParking.Client.IDAL;
+using My.SmartParking.Client.Start.Views;
 using Prism.Ioc;
 using Prism.Unity;
 using System.ComponentModel;
@@ -20,6 +24,7 @@ namespace My.SmartParking.Client.Start
 
         protected override void InitializeShell(Window shell)
         {
+            //先打开登录窗口,如果登录成功则打开主窗口
             if (Container.Resolve<LoginView>().ShowDialog() == false)
             {
                 Application.Current?.Shutdown() ;
@@ -32,7 +37,8 @@ namespace My.SmartParking.Client.Start
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-           //containerRegistry.Register(typeof(MainWindow));
+           containerRegistry.Register<ILoginDal, LoginDal>();
+           containerRegistry.Register<ILoginBLL, LoginBLL>();
         }
     }
 

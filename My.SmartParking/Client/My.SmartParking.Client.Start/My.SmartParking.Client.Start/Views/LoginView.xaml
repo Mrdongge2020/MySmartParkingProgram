@@ -6,13 +6,15 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:local="clr-namespace:My.SmartParking.Client.Start"
+        xmlns:pwdHelper="clr-namespace:My.SmartParking.Client.Common;assembly=My.SmartParking.Client.Common"
         mc:Ignorable="d"  WindowStartupLocation="CenterScreen" FontSize="30"
         Title="LoginView" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBox Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <PasswordBox Password="123456"></PasswordBox>
-            <Button Width="100" Height="30" Content="Login" Command=""></Button>
+            <TextBox Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged}"></TextBox> 
+            <PasswordBox pwdHelper:PasswordHelper.Password="{Binding Password,Mode=TwoWay}" pwdHelper:PasswordHelper.Attach="Ture"></PasswordBox>
+            <TextBlock Text="{Binding eErrorMsg}" Foreground="Red"></TextBlock>
+            <Button Width="100" Height="30" Content="Login" Command="{Binding LoginCommand}"></Button>
         </StackPanel>
         
     </Grid>

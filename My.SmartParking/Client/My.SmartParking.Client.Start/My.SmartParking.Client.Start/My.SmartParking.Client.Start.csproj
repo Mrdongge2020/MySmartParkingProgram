@@ -14,4 +14,12 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\My.SmartParking.Client.BLL\My.SmartParking.Client.BLL.csproj" />
+    <ProjectReference Include="..\..\My.SmartParking.Client.Common\My.SmartParking.Client.Common.csproj" />
+    <ProjectReference Include="..\..\My.SmartParking.Client.DAL\My.SmartParking.Client.DAL.csproj" />
+    <ProjectReference Include="..\..\My.SmartParking.Client.IBLL\My.SmartParking.Client.IBLL.csproj" />
+    <ProjectReference Include="..\..\My.SmartParking.Client.IDAL\My.SmartParking.Client.IDAL.csproj" />
+  </ItemGroup>
+
 </Project>
