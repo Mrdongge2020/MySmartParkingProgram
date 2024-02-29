@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace My.SmartParking.Client.Start.ViewModels
@@ -52,7 +53,7 @@ namespace My.SmartParking.Client.Start.ViewModels
 
         //登录命令
         private void OnLogin(object obj) 
-        {
+         {
             try
             {
                 this.ErrorMsg = "";
@@ -69,9 +70,9 @@ namespace My.SmartParking.Client.Start.ViewModels
 
                 //登录操作
                 if(_loginBLL.Login(this.UserName, this.Password).GetAwaiter().GetResult())
-                { 
+                {
                     //关闭登录窗口，并且DialogResult返回true；
-
+                    (obj as Window).DialogResult = true;
                 };
             }
             catch (Exception e)

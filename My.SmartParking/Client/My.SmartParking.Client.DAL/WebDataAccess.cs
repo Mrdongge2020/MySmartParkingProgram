@@ -8,7 +8,7 @@ namespace My.SmartParking.Client.DAL
 {
     public class WebDataAccess
     {
-        private string domain = "http://localhost:5000/api";
+        private string domain = "http://localhost:5000/api/";
 
         public  Task<string> GetDatas(string uri) 
         {
@@ -27,7 +27,7 @@ namespace My.SmartParking.Client.DAL
         private MultipartFormDataContent GetFormData(Dictionary<string, HttpContent> httpContent)
         {
             var postContent=new MultipartFormDataContent();
-            string boundary = $"-----------------{DateTime.Now.Ticks.ToString("x")}";
+            string boundary = $"-----------------{DateTime.Now.Ticks.ToString("x")}-----------";
             postContent.Headers.Add("ContentType",$"muiltipart/form-data,boundary={boundary}");
             foreach (var item in httpContent)
             {

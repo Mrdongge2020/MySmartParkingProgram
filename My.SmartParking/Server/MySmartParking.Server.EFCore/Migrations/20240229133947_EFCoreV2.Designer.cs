@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySmartParking.Server.EFCore;
 
@@ -10,9 +11,11 @@ using MySmartParking.Server.EFCore;
 namespace MySmartParking.Server.EFCore.Migrations
 {
     [DbContext(typeof(EFCoreContext))]
-    partial class EFCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240229133947_EFCoreV2")]
+    partial class EFCoreV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,12 +26,12 @@ namespace MySmartParking.Server.EFCore.Migrations
 
             modelBuilder.Entity("My.SmartParking.Server.Models.SysUserInfo", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Icon")
                         .HasMaxLength(500)
@@ -47,7 +50,7 @@ namespace MySmartParking.Server.EFCore.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("UserName");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("SysUserInfos");
                 });

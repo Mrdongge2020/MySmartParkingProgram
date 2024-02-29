@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace My.SmartParking.Server.Start.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {

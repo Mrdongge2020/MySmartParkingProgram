@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
@@ -18,6 +19,7 @@
     <ProjectReference Include="..\..\My.SmartParking.Client.BLL\My.SmartParking.Client.BLL.csproj" />
     <ProjectReference Include="..\..\My.SmartParking.Client.Common\My.SmartParking.Client.Common.csproj" />
     <ProjectReference Include="..\..\My.SmartParking.Client.DAL\My.SmartParking.Client.DAL.csproj" />
+    <ProjectReference Include="..\..\My.SmartParking.Client.Entity\My.SmartParking.Client.Entity.csproj" />
     <ProjectReference Include="..\..\My.SmartParking.Client.IBLL\My.SmartParking.Client.IBLL.csproj" />
     <ProjectReference Include="..\..\My.SmartParking.Client.IDAL\My.SmartParking.Client.IDAL.csproj" />
   </ItemGroup>

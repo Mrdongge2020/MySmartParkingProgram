@@ -15,7 +15,7 @@ namespace My.SmartParking.Server.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Id")]
-        public int Id { get; set; }
+        public int UserId { get; set; }
         /// <summary>
         /// 用户名
         /// </summary>
@@ -31,5 +31,12 @@ namespace My.SmartParking.Server.Models
         [Required]
         [MaxLength(50)]
         public string Password { get; set; }
+
+        /// <summary>
+        /// icon
+        /// </summary>
+        [Column("Icon")]
+        [MaxLength(500)]
+        public string? Icon { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using My.SmartParking.Client.IBLL;
+﻿using My.SmartParking.Client.Entity;
+using My.SmartParking.Client.IBLL;
 using My.SmartParking.Client.IDAL;
 
 namespace My.SmartParking.Client.BLL
@@ -14,6 +15,13 @@ namespace My.SmartParking.Client.BLL
         {
             var loginStr=await _loginDal.Login(username, password);
 
+            UserEntity userEntity = Newtonsoft.Json.JsonConvert.DeserializeObject<UserEntity>(loginStr);
+            if (userEntity!=null) 
+            {
+
+                GlobalEntity.CurrentUserInfo = userEntity;
+                return true;
+            }
             return false;
         }
     }
