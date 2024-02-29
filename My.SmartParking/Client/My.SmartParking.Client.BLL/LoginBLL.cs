@@ -14,7 +14,6 @@ namespace My.SmartParking.Client.BLL
         {
             var loginStr=await _loginDal.Login(username, password);
 
-
             return false;
         }
     }
